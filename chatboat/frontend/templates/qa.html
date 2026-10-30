@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Q&amp;A</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css', v=asset_version) }}">
+</head>
+<body class="qa-body" data-page="qa-v2">
+<div class="supergraphic"></div>
+<header class="topbar">
+    <div class="topbar-inner">
+        <h1>Medical Q&amp;A</h1>
+        <div class="status" id="status">Checking…</div>
+    </div>
+</header>
+
+<main class="qa-main">
+    <div id="messages" class="messages" aria-live="polite">
+        <div class="welcome" id="welcome">
+            <h2>Ask a question</h2>
+            <div class="examples">
+                <button class="example" type="button">What are the common symptoms of anemia?</button>
+                <button class="example" type="button">What causes high blood sugar?</button>
+                <button class="example" type="button">How is high blood pressure detected?</button>
+            </div>
+        </div>
+    </div>
+
+    <form id="chatForm" class="chat-form">
+        <textarea id="question" rows="1"
+            placeholder="Ask a question about your documents…" title="Enter to send, Shift+Enter for a new line"></textarea>
+        <button type="submit" id="sendBtn" class="btn-primary">Ask AI</button>
+    </form>
+</main>
+
+<script src="{{ url_for('static', filename='js/qa.js', v=asset_version) }}"></script>
+</body>
+</html>
